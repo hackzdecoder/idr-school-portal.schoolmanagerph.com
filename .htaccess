@@ -1,25 +1,16 @@
+# File: /public_html/.htaccess
+
 RewriteEngine On
-RewriteBase /
 
-# If requesting a file that exists in /dist, serve it
+# If the request is for a file that exists in /dist, serve it from /dist
+RewriteCond %{DOCUMENT_ROOT}/dist%{REQUEST_URI} -f
+RewriteRule ^(.*)$ /dist/$1 [L]
 
-RewriteCond %{DOCUMENT_ROOT}/dist/%{REQUEST_URI} -f
-RewriteRule ^(.\*)$ dist/$1 [L]
+# If the request is for a directory that exists in /dist, serve it from /dist
+RewriteCond %{DOCUMENT_ROOT}/dist%{REQUEST_URI} -d
+RewriteRule ^(.*)$ /dist/$1 [L]
 
-# If requesting the root, serve dist/index.html
-
-RewriteRule ^$ dist/index.html [L]
-
-# For any other request (SPA routes like /users), serve dist/index.html
-
+# For everything else, serve index.html from /dist (SPA fallback)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ dist/index.html [L]
-
-# Set proper MIME types
-
-<IfModule mod_mime.c>
-    AddType application/javascript .js
-    AddType text/css .css
-    AddType image/webp .webp
-</IfModule>
+RewriteRule ^ /dist/index.html [L]
