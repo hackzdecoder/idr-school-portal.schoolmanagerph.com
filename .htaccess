@@ -1,0 +1,25 @@
+RewriteEngine On
+RewriteBase /
+
+# If requesting a file that exists in /dist, serve it
+
+RewriteCond %{DOCUMENT_ROOT}/dist/%{REQUEST_URI} -f
+RewriteRule ^(.\*)$ dist/$1 [L]
+
+# If requesting the root, serve dist/index.html
+
+RewriteRule ^$ dist/index.html [L]
+
+# For any other request (SPA routes like /users), serve dist/index.html
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ dist/index.html [L]
+
+# Set proper MIME types
+
+<IfModule mod_mime.c>
+    AddType application/javascript .js
+    AddType text/css .css
+    AddType image/webp .webp
+</IfModule>
