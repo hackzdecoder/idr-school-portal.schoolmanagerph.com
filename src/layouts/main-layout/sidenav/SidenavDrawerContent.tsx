@@ -3,18 +3,25 @@ import { Divider, IconButton } from '@mui/material';
 import Box from '@mui/material/Box';
 import List from '@mui/material/List';
 import Toolbar from '@mui/material/Toolbar';
+import { CURRENT_USER_ROLE, UserRole } from 'data/roles';
 import { useSettingsContext } from 'providers/SettingsProvider';
 import sitemap from 'routes/sitemap';
 import IconifyIcon from 'components/base/IconifyIcon';
 import Logo from 'components/common/Logo';
-import PromoCard from 'components/common/PromoCard';
 import NavItem from './NavItem';
 import SidenavSimpleBar from './SidenavSimpleBar';
-import promo from '/assets/images/illustrations/5.webp';
 
 interface SidenavDrawerContentProps {
   variant?: 'permanent' | 'temporary';
 }
+
+// Filter function
+const filterMenuItemsByRole = (items: any[], role: UserRole) => {
+  return items.filter((item) => {
+    if (!item.roles) return true;
+    return item.roles.includes(role);
+  });
+};
 
 const SidenavDrawerContent = ({ variant = 'permanent' }: SidenavDrawerContentProps) => {
   const {
@@ -22,9 +29,18 @@ const SidenavDrawerContent = ({ variant = 'permanent' }: SidenavDrawerContentPro
     setConfig,
   } = useSettingsContext();
 
+  const filteredSitemap = useMemo(() => {
+    return sitemap
+      .map((section) => ({
+        ...section,
+        items: filterMenuItemsByRole(section.items, CURRENT_USER_ROLE),
+      }))
+      .filter((section) => section.items.length > 0);
+  }, []);
+
   const expanded = useMemo(
     () => variant === 'temporary' || (variant === 'permanent' && !sidenavCollapsed),
-    [sidenavCollapsed],
+    [sidenavCollapsed, variant],
   );
 
   const toggleNavbarDrawer = () => {
@@ -80,7 +96,7 @@ const SidenavDrawerContent = ({ variant = 'permanent' }: SidenavDrawerContentPro
             ]}
           >
             <div>
-              {sitemap.map((menu) => (
+              {filteredSitemap.map((menu) => (
                 <Box key={menu.id}>
                   {menu.subheader === 'Docs' && !sidenavCollapsed && (
                     <>
@@ -105,7 +121,6 @@ const SidenavDrawerContent = ({ variant = 'permanent' }: SidenavDrawerContentPro
                 </Box>
               ))}
             </div>
-            {!sidenavCollapsed && <PromoCard img={promo} imgStyles={{ maxWidth: 136 }} />}
           </Box>
         </SidenavSimpleBar>
       </Box>

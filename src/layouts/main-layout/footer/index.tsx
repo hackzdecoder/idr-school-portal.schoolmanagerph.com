@@ -34,24 +34,22 @@ const Footer = () => {
           }}
         >
           <Box component="span" whiteSpace="nowrap">
-            Thank you for creating with
+            © 2026 TaparSoft Enterprise. All rights reserved. |
             <Box component="strong" mx={0.5}>
-              Aurora{' '}
+              <Link
+                href="https://idr-school-portal.schoolmanagerph.com"
+                target="_blank"
+                sx={{ textDecoration: 'none', color: 'inherit' }}
+              >
+                <b>ID School Registration</b>
+              </Link>
             </Box>
           </Box>
 
           <Box component="span" whiteSpace="nowrap">
             <Box component="span" display={{ xs: 'none', sm: 'inline' }}>
-              |
-            </Box>{' '}
-            {dayjs().year()} ©
-            <Link
-              href="https://themewagon.com/"
-              target="_blank"
-              sx={{ textDecoration: 'none', mx: 0.5 }}
-            >
-              ThemeWagon
-            </Link>
+              © {dayjs().year()}
+            </Box>
           </Box>
         </Typography>
 

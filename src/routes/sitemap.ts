@@ -1,5 +1,6 @@
 import { HTMLAttributeAnchorTarget } from 'react';
 import { SxProps } from '@mui/material';
+import { UserRole } from 'data/roles';
 import paths, { rootPaths } from './paths';
 
 export interface SubMenuItem {
@@ -13,16 +14,18 @@ export interface SubMenuItem {
   icon?: string;
   iconSx?: SxProps;
   items?: SubMenuItem[];
+  roles?: UserRole[];
 }
 
 export interface MenuItem {
   id: string;
-  key?: string; // used for the locale
+  key?: string;
   subheader?: string;
   icon: string;
   target?: HTMLAttributeAnchorTarget;
   iconSx?: SxProps;
   items: SubMenuItem[];
+  roles?: UserRole[];
 }
 
 const sitemap: MenuItem[] = [
@@ -34,137 +37,57 @@ const sitemap: MenuItem[] = [
         name: 'Dashboard',
         path: rootPaths.root,
         pathName: 'dashboard',
-        icon: 'material-symbols:query-stats-rounded',
+        icon: 'material-symbols:speed-outline',
         active: true,
+        roles: ['Super Admin', 'Admin', 'Faculty', 'Student'],
       },
       {
-        name: 'Users',
-        path: paths.users,
-        pathName: 'users',
-        icon: 'material-symbols:account-box-outline',
+        name: 'Management',
+        path: paths.management,
+        pathName: 'management',
+        icon: 'material-symbols:account-tree-outline',
         active: true,
+        roles: ['Super Admin', 'Admin'],
       },
       {
-        name: 'Account',
-        key: 'account',
-        path: paths.account,
-        pathName: 'account',
+        name: 'Accounts',
+        path: paths.accounts,
+        pathName: 'accounts',
+        icon: 'material-symbols:group-outline',
         active: true,
-        icon: 'material-symbols:admin-panel-settings-outline-rounded',
+        roles: ['Super Admin', 'Admin', 'Accounting'],
       },
       {
-        name: 'Starter',
-        path: paths.starter,
-        pathName: 'starter',
-        icon: 'material-symbols:play-circle-outline-rounded',
+        name: 'Monitoring',
+        path: '/monitoring',
+        pathName: 'monitoring',
+        icon: 'material-symbols:monitor-outline',
         active: true,
+        roles: ['Super Admin'],
       },
       {
-        name: 'Error 404',
-        pathName: 'error',
+        name: 'Student Profile',
+        path: paths.student_profile,
+        pathName: 'student-profile',
+        icon: 'material-symbols:person-outline',
         active: true,
-        icon: 'material-symbols:warning-outline-rounded',
-        path: paths[404],
+        roles: ['Faculty'],
       },
       {
-        name: 'Login',
-        icon: 'material-symbols:login',
-        path: paths.login,
-        pathName: 'login',
+        name: 'System Settings',
+        path: paths.system_settings,
+        pathName: 'system-settings',
+        icon: 'material-symbols:settings-outline',
         active: true,
+        roles: ['Super Admin', 'Admin', 'Faculty'],
       },
       {
-        name: 'Sign up',
-        icon: 'material-symbols:person-add-outline',
-        path: paths.signup,
-        pathName: 'sign-up',
+        name: 'Profile',
+        path: paths.profile,
+        pathName: 'profile',
+        icon: 'material-symbols:person-outline',
         active: true,
-      },
-      {
-        name: 'Documentation',
-        icon: 'material-symbols:description-outline-rounded',
-        path: paths.documentation,
-        pathName: 'documentation',
-        active: true,
-        target: '_blank',
-      },
-      {
-        name: 'Multi level',
-        pathName: 'multi-level',
-        icon: 'material-symbols:layers-outline-rounded',
-        active: true,
-        items: [
-          {
-            name: 'Level two (1)',
-            path: '#!',
-            pathName: 'multi-level-2',
-            active: true,
-          },
-          {
-            name: 'Level two (2)',
-            pathName: 'multi-level-3',
-            active: true,
-            items: [
-              {
-                name: 'Level three (1)',
-                path: '#!',
-                pathName: 'multi-level-item-3',
-                active: true,
-              },
-              {
-                name: 'Level three (2)',
-                path: '#!',
-                pathName: 'multi-level-item-4',
-                active: true,
-              },
-            ],
-          },
-          {
-            name: 'Level two (3)',
-            pathName: 'multi-level-4',
-            active: true,
-            items: [
-              {
-                name: 'Level three (3)',
-                path: '#!',
-                pathName: 'multi-level-item-6',
-                active: true,
-              },
-              {
-                name: 'Level three (4)',
-                pathName: 'multi-level-item-7',
-                active: true,
-                items: [
-                  {
-                    name: 'Level four (1)',
-                    path: '#!',
-                    pathName: 'multi-level-item-8',
-                    active: true,
-                  },
-                  {
-                    name: 'Level four (2)',
-                    pathName: 'multi-level-item-9',
-                    active: true,
-                    items: [
-                      {
-                        name: 'Level five (1)',
-                        path: '#!',
-                        pathName: 'multi-level-item-10',
-                        active: true,
-                      },
-                      {
-                        name: 'Level five (2)',
-                        path: '#!',
-                        pathName: 'multi-level-item-11',
-                        active: true,
-                      },
-                    ],
-                  },
-                ],
-              },
-            ],
-          },
-        ],
+        roles: ['Student'],
       },
     ],
   },

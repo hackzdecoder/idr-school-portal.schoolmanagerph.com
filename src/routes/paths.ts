@@ -7,14 +7,17 @@ export const rootPaths = {
 
 const paths = {
   root: rootPaths.root,
-  starter: `/starter`,
-  users: `/users`,
-  account: `/account`,
+  management: `/management`,
+  accounts: `/accounts`,
+  monitoring: `/monitoring`,
+  student_profile: `/student-profile`,
+  profile: `/profile`,
+  system_settings: `/system-settings`,
+
   login: `/${rootPaths.authRoot}/login`,
   signup: `/${rootPaths.authRoot}/sign-up`,
   notifications: `/notifications`,
   documentation: documentationPath,
-
   404: `/404`,
 };
 

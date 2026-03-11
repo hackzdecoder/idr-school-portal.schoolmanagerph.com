@@ -1,9 +1,9 @@
 # Aurora Free React Material UI Admin Template
 
-[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/themewagon/aurora-free/blob/main/LICENSE.md)
-[![price](https://img.shields.io/badge/price-FREE-0098f7.svg)](https://github.com/themewagon/aurora-free/blob/main/LICENSE.md)
-[![GitHub package version](https://img.shields.io/github/package-json/v/themewagon/aurora-free)](https://github.com/themewagon/aurora-free/)
-[![Download ZIP](https://img.shields.io/badge/Download-ZIP-blue?style=flat-square&logo=github)](https://themewagon.com/themes/aurora-free/)
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/themewagon/idr-school-portal/blob/main/LICENSE.md)
+[![price](https://img.shields.io/badge/price-FREE-0098f7.svg)](https://github.com/themewagon/idr-school-portal/blob/main/LICENSE.md)
+[![GitHub package version](https://img.shields.io/github/package-json/v/themewagon/idr-school-portal)](https://github.com/themewagon/idr-school-portal/)
+[![Download ZIP](https://img.shields.io/badge/Download-ZIP-blue?style=flat-square&logo=github)](https://themewagon.com/themes/idr-school-portal/)
 
 Aurora is a free Material UI dashboard template crafted with React and Vite.
 It focuses on delivering a clean, modern, and intuitive user experience with well-structured pages and flexible components.
@@ -11,21 +11,21 @@ Aurora comes fully responsive out of the box, ensuring a seamless experience on 
 
 ✨ Support us! If you enjoy using Aurora, don’t forget to click the ⭐ at the top of the repo!
 
-![preview](public/assets/images/aurora-free-preview.webp)
+![preview](public/assets/images/idr-school-portal-preview.webp)
 
 ## Pages
 
-- [Dashboard](https://themewagon.github.io/aurora-free/)
-- [Users](https://themewagon.github.io/aurora-free/users)
-- [Account](https://themewagon.github.io/aurora-free/account)
-- [Starter](https://themewagon.github.io/aurora-free/starter)
-- [Error 404](https://themewagon.github.io/aurora-free/404)
-- [Login](https://themewagon.github.io/aurora-free/auth/login)
-- [Sign up](https://themewagon.github.io/aurora-free/auth/sign-up)
+- [Dashboard](https://themewagon.github.io/idr-school-portal/)
+- [Users](https://themewagon.github.io/idr-school-portal/users)
+- [Account](https://themewagon.github.io/idr-school-portal/account)
+- [Starter](https://themewagon.github.io/idr-school-portal/starter)
+- [Error 404](https://themewagon.github.io/idr-school-portal/404)
+- [Login](https://themewagon.github.io/idr-school-portal/auth/login)
+- [Sign up](https://themewagon.github.io/idr-school-portal/auth/sign-up)
 
 ## Quick start
 
-- Clone the repo: `git clone https://github.com/themewagon/aurora-free.git`
+- Clone the repo: `git clone https://github.com/themewagon/idr-school-portal.git`
 - Recommended: `Node.js v20.x`
 - **Install:** `npm i` or `pnpm i`
 - **Start:** `npm run dev` or `pnpm dev`
@@ -47,9 +47,10 @@ Aurora comes fully responsive out of the box, ensuring a seamless experience on 
 
 ## License
 
-Distributed under the [MIT](https://github.com/themewagon/aurora-free/blob/main/LICENSE.md) license.
+Distributed under the [MIT](https://github.com/themewagon/idr-school-portal/blob/main/LICENSE.md) license.
 
 ## Support
 
 Email: support@themewagon.com
+
 # idr-school-portal.schoolmanagerph.com
