@@ -7,10 +7,6 @@ import Page404 from 'pages/errors/Page404';
 import PageLoader from 'components/loading/PageLoader';
 import paths, { rootPaths } from './paths';
 
-// const Analytics = lazy(() => import('pages/dashboard/Analytics'));
-// const UserList = lazy(() => import('pages/users/UserList'));
-// const Account = lazy(() => import('pages/others/Account'));
-
 const Login = lazy(() => import('pages/authentication/Login'));
 const Signup = lazy(() => import('pages/authentication/Signup'));
 

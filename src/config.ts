@@ -21,6 +21,6 @@ export const initialConfig: Config = {
 };
 
 export const defaultAuthCredentials = {
-  email: 'demo@aurora.com',
-  password: 'password123',
+  email: '',
+  password: '',
 };
